@@ -64,7 +64,7 @@ const SignUpPage = () => {
     }
 
     toast.success("অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!");
-    router.push("/"); // ba "/" jekhane jete chan
+    router.push("/"); 
   };
 
   const handleSocial = async (provider: "google" | "github") => {
@@ -77,12 +77,7 @@ const SignUpPage = () => {
       toast.danger(error.message || "লগইন ব্যর্থ হয়েছে");
     }
   };
-   const handleGoogleSignUp = async () => {
-    const data = await authClient.signIn.social({
-      provider: "google",
-    })
-    console.log(data)
-  }
+   
 
   return (
     <div className="bg-[#F4F7F4] px-4 py-12">
@@ -179,7 +174,7 @@ const SignUpPage = () => {
           <div className="grid grid-cols-2 gap-3">
             <button
               type="button"
-              onClick={handleGoogleSignUp}
+              onClick={() => handleSocial("google")}
               className="flex items-center justify-center gap-2 rounded-lg border border-[#e3e9e5] bg-white py-2.5 text-[13px] font-bold text-[#1f2a24] hover:bg-gray-50"
             >
               <svg

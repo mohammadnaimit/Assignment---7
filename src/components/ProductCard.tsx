@@ -46,7 +46,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <div className="rounded-xl border border-[#e3e9e5] bg-white/70 px-3.5 py-3 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-      {/* icon + name + unit */}
+      
       <div className="flex items-center gap-2.5">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#eef2ef] text-lg">
           {image}
@@ -61,7 +61,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         </div>
       </div>
 
-      {/* price + badge */}
+      
       <div className="mt-3">
         <p className="text-[11px] text-[#7a867f]">আজকের দাম</p>
         <div className="mt-0.5 flex items-center justify-between">

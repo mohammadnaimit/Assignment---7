@@ -29,7 +29,7 @@ const SignInPage = () => {
     const email = (data.email as string)?.trim();
     const password = data.password as string;
 
-    // Validation
+   
     if (!email || !password) {
       toast.danger("ইমেইল ও পাসওয়ার্ড দিন");
       return;
@@ -66,12 +66,7 @@ const SignInPage = () => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    const data = await authClient.signIn.social({
-      provider: "google",
-    })
-    console.log(data)
-  }
+ 
 
   return (
     <div className="bg-[#F4F7F4] px-4 py-12">
@@ -134,7 +129,7 @@ const SignInPage = () => {
           <div className="grid grid-cols-2 gap-3">
             <button
               type="button"
-              onClick={handleGoogleSignIn}
+              onClick={() => handleSocial("google")}
               
               className="flex items-center justify-center gap-2 rounded-lg border border-[#e3e9e5] bg-white py-2.5 text-[13px] font-semibold text-[#1f2a24] hover:bg-gray-50"
             >

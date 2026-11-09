@@ -1,4 +1,4 @@
-"use client"
+
 import Image from "next/image";
 import Navlinks from "./Navlinks";
 import Link from "next/link";
@@ -18,14 +18,14 @@ const Headers = () => {
         <div className="flex items-center gap-3">
           <Link href={"/"}>
             <div className="flex items-center justify-center rounded-xl bg-[#0f9447] p-2.5 shadow-sm">
-            <Image
-              className="h-7 w-7 object-contain brightness-0 invert"
-              height={50}
-              width={50}
-              src="/logo-icon.png"
-              alt="বাজার দর লোগো"
-            />
-          </div>
+              <Image
+                className="h-7 w-7 object-contain brightness-0 invert"
+                height={50}
+                width={50}
+                src="/logo-icon.png"
+                alt="বাজার দর লোগো"
+              />
+            </div>
           </Link>
 
           <div>
@@ -39,7 +39,7 @@ const Headers = () => {
         </div>
 
         {/* Button */}
-        <UserInfo/>
+        <UserInfo />
 
       </div>
       <Navlinks />
