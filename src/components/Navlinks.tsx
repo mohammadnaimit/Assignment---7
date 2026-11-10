@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import Link from "next/link";
+import CategoryNavLinks from "./CategoryNavLinks";
 
 interface Category {
   nameBn: string;
@@ -34,18 +36,26 @@ const Navlinks = async () => {
 
   return (
     <nav className="border-t border-gray-100 py-3">
-      <div className="flex items-center justify-start gap-5 md:gap-7 mx-auto max-w-7xl px-4 md:px-0 md:pl-14 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-        {data.map((category) => (
-          <Link
-            key={category.slug}
-            href={`/${category.slug}`}
-            className="flex items-center gap-2 text-gray-800 hover:text-green-600 font-medium text-sm md:text-base transition-colors duration-200 whitespace-nowrap shrink-0"
-          >
-            <span className="text-base">{category.icon}</span>
-            <span>{category.nameBn}</span>
-          </Link>
-        ))}
-      </div>
+      <Suspense
+        fallback={
+          <div className="mx-auto max-w-7xl overflow-x-auto px-4 md:px-0 md:pl-14">
+            <div className="flex items-center gap-5 md:gap-7">
+              {data.map((category) => (
+                <Link
+                  key={category.slug}
+                  href={`/${category.slug}`}
+                  className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg px-2 py-1 text-sm font-medium text-gray-800 md:text-base"
+                >
+                  <span className="text-base">{category.icon}</span>
+                  <span>{category.nameBn}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        }
+      >
+        <CategoryNavLinks categories={data} />
+      </Suspense>
     </nav>
   );
 };
