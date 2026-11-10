@@ -1,8 +1,10 @@
+import Link from "next/link";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
 
 interface HeadLines {
   id: number;
+  slug: string;
   nameBn: string;
   categoryIcon: string;
   today: number;
@@ -22,9 +24,10 @@ const Marquee = async () => {
       <MarqueeText direction="right" duration={10}>
         <div className="flex items-center">
           {data.map((item) => (
-            <div
+            <Link
               key={item.id}
-              className="flex items-center gap-2 px-5 border-r border-gray-200 text-sm whitespace-nowrap shrink-0"
+              href={`/product/${item.slug}`}
+              className="flex items-center gap-2 px-5 border-r border-gray-200 text-sm whitespace-nowrap shrink-0 hover:bg-[#f4f7f4]"
             >
               <span>{item.categoryIcon}</span>
               <span className="font-medium text-gray-800">{item.nameBn}</span>
@@ -39,7 +42,7 @@ const Marquee = async () => {
                 <span>{item.change?.dir === "up" ? "▼" : "▼"}</span>
                 <span>{item.change?.pct}%</span>
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </MarqueeText>

@@ -1,5 +1,5 @@
 
-import ProductCard from './ProductCard';
+import ProductList from "./ProductList";
 interface Product  {
   id: number;
   slug: string;
@@ -27,15 +27,15 @@ const AllProducts = async() => {
   const data: Product[] = await res.json();
     return (
         <div>
-            <div className="max-w-7xl mx-auto px-6 py-7">
-          <h1 className="mb-4 text-xl font-bold text-[#1f2a24] sm:text-2xl">সব পণ্য</h1>
+            <div className="max-w-7xl mx-auto px-8 py-7">
+          <h1 className="mb-2 text-xl font-bold text-[#1f2a24] sm:text-2xl">সব পণ্য</h1>
+          <p className="text-sm text-[#6b776f]">
+            মোট {data.length} টি পণ্য দেখানো হচ্ছে
+          </p>
 
-          <p>মোট {data.length} টি পণ্য দেখানো হচ্ছে</p>
         </div>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-15">
-          {data.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+        <div className="max-w-7xl mx-auto px-8">
+          <ProductList products={data} showCount={false} />
         </div>
         </div>
     );

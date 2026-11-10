@@ -157,7 +157,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <Link
-      href={`/${product.slug}`}
+      href={`/product/${product.slug}`}
       className="group block cursor-pointer rounded-xl border border-[#e3e9e5] bg-white/70 px-3.5 py-3 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#0b8a43]/40 hover:bg-white hover:shadow-[0_10px_24px_-8px_rgba(11,138,67,0.25)]"
     >
       <div className="flex items-center gap-2.5">

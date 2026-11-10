@@ -24,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <Toast.Provider placement="top" />
         <Headers />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 bg-[#F4F7F4]">{children}</main>
         <Footer />
       </body>
     </html>
