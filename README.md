@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# বাজার দর (BazarDor)
 
-## Getting Started
+BazarDor helps people check everyday market prices in Bangladesh, compare product prices across markets, and follow price changes.
 
-First, run the development server:
+## Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js 16 (App Router)
+- React 19 and TypeScript
+- Tailwind CSS 4, daisyUI, and HeroUI
+- Better Auth for email/password and Google/GitHub sign-in
+- MongoDB for authentication data
+- BazarDor Products API for product, category, and market-price data
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Browse products across categories and sort them by price.
+2. View product details, including market-by-market minimum and maximum prices.
+3. Follow products with rising or falling prices from the home page and scrolling price ticker.
+4. Create an account and sign in with email/password, Google, or GitHub.
+5. Access product details and profile pages after signing in.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Getting started
 
-## Learn More
+### Requirements
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js
+- A MongoDB connection string
+- Google and GitHub OAuth credentials if you want to use social sign-in
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Install dependencies:
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Create a `.env` file in the project root and set the environment variables used by the app:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```env
+   BETTER_AUTH_SECRET=
+   BETTER_AUTH_URL=http://localhost:3000
+   MONGODB_URL=
+   GOOGLE_CLIENT_ID=
+   GOOGLE_CLIENT_CICRET=
+   GITHUB_CLIENT_ID=
+   GITHUB_CLIENT_CICRET=
+   ```
+
+   Keep credentials private. For local Google and GitHub OAuth apps, configure these callback URLs:
+
+   - `http://localhost:3000/api/auth/callback/google`
+   - `http://localhost:3000/api/auth/callback/github`
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000).
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run lint` | Run ESLint |
+| `npm run build` | Create a production build |
+| `npm run start` | Start the production server |
