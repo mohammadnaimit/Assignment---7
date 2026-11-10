@@ -27,7 +27,7 @@ const Marquee = async () => {
             <Link
               key={item.id}
               href={`/product/${item.slug}`}
-              className="relative flex items-center gap-2 px-3 border-r border-gray-200 text-sm whitespace-nowrap shrink-0 after:absolute after:right-3 after:bottom-1 after:left-4 after:h-0.5 after:scale-x-0 after:bg-[#008744] after:transition-transform hover:bg-[#f4f7f4] hover:after:scale-x-100"
+              className="relative flex items-center gap-2 px-3 border-r border-gray-200 text-sm whitespace-nowrap shrink-0 after:absolute after:right-3 after:bottom-1 after:left-4 after:h-0.5 after:scale-x-0 after:bg-[#008744] after:transition-transform hover:bg-[#f4f7f4] hover:after:scale-x-100 focus-visible:after:scale-x-100 active:after:scale-x-100"
             >
               <span>{item.categoryIcon}</span>
               <span className="font-medium text-gray-800">{item.nameBn}</span>
